@@ -55,6 +55,7 @@ export default function BlogList({ posts }) {
                         <article className={styles.post}>
                             <h2 className={styles.postTitle}>{post.title}</h2>
                             <div className={styles.postDate}>{post.date}</div>
+                            <p className={styles.postExcerpt}>{post.excerpt}</p>
                             <div className={styles.postTags}>
                                 {post.tags?.map(tag => (
                                     <span key={tag} className={styles.tag} style={{ cursor: 'default' }}>

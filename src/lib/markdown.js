@@ -57,7 +57,8 @@ export function getAllPosts() {
         const id = fileName.replace(/\.md$/, '');
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data } = matter(fileContents);
+        const { data, content } = matter(fileContents);
+        const excerpt = content.trim().split('\n')[0].substring(0, 160) + (content.length > 160 ? '...' : '');
 
         // Serialize date if it's a Date object
         if (data.date && data.date instanceof Date) {
@@ -66,6 +67,7 @@ export function getAllPosts() {
 
         return {
             id,
+            excerpt,
             ...data,
         };
     });
