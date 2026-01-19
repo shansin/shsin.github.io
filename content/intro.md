@@ -1,3 +1,3 @@
-# Hello, I'm Shantanu Singh
+# Hello, I'm Shantanu
 
-This is the place where I share my thoughts and projects.
+This is the place where I share my thoughts, projects and musings.

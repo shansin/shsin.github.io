@@ -1,9 +1,7 @@
 ---
-title: "First Blog Post"
-date: "2023-10-01"
-tags: ["coding", "intro"]
+title: "First Post"
+date: "2026-01-19"
+tags: ["intro"]
 ---
 
-This is my first blog post. Welcome to my new website!
-
-I built this site using Next.js and Markdown.
+I've been meaning to start a blog for a while now. I've always enjoyed writing, it's a great way to share my thoughts and ideas with the world. I'm not sure how often I'll be posting, but I'll try to post at least once a month.
