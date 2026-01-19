@@ -8,4 +8,4 @@ Next.js is a powerful React framework.
 
 ## Why I chose it
 
-It offers great performance and developer experience.
+It offers great performance and developer experience
