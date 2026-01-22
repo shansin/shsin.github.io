@@ -1,5 +1,5 @@
 :root {
-  /* Premium Dark Theme Tokens */
+  /* Default Theme (Dark) */
   --bg-primary: #0a0a0a;
   --bg-secondary: #171717;
   --text-primary: #ededed;
@@ -8,6 +8,9 @@
   --accent: #3b82f6;
   --accent-glow: rgba(59, 130, 246, 0.5);
   --border: #262626;
+  --primary: var(--accent);
+  --primary-dark: #2563eb;
+  --text-on-accent: #ffffff;
 
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -17,6 +20,21 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --muted: #9ca3af;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.1);
+  --border: #e5e7eb;
+  --primary: var(--accent);
+  --primary-dark: #2563eb;
+  --text-on-accent: #ffffff;
 }
 
 * {
@@ -37,6 +55,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -59,6 +78,17 @@ h6 {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* SVG Theme Handling */
+img[src$=".svg"], 
+svg {
+  transition: filter 0.3s ease;
+}
+
+[data-theme="light"] img[src$=".svg"],
+[data-theme="light"] svg {
+  filter: brightness(0) invert(1);
 }
 
 /* Utilities */

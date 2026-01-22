@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: 'swap', // Prevent FOIT (Flash of Invisible Text)
+  display: 'swap',
 });
 
 export const metadata = {
@@ -13,14 +14,14 @@ export const metadata = {
 
 import Footer from "@/components/Footer";
 
-// ...
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body className={inter.className} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <div style={{ flex: 1 }}>{children}</div>
-        <Footer />
+        <ThemeProvider>
+          <div style={{ flex: 1 }}>{children}</div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

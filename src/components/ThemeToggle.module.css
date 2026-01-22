@@ -1,0 +1,56 @@
+.button {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.button:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.text {
+  font-weight: 500;
+}
+
+.switchText {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover .switchText {
+  opacity: 1;
+}
+
+/* Small variant for footer */
+.button.small {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  gap: 0.4rem;
+}
+
+.button.small .text {
+  font-size: 0.8rem;
+}
+
+.button.small .switchText {
+  font-size: 0.7rem;
+}

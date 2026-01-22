@@ -6,9 +6,11 @@ export default function Intro({ contentHtml, title }) {
         <section className={styles.intro}>
             <div className={styles.header}>
                 <h1 className={styles.title}>{title}</h1>
-                <Link href="/about" className={styles.aboutLink}>
-                    About
-                </Link>
+                <div className={styles.headerControls}>
+                    <Link href="/about" className={styles.aboutLink}>
+                        About
+                    </Link>
+                </div>
             </div>
             <div
                 className={styles.content}

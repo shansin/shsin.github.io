@@ -11,9 +11,23 @@
     align-items: center;
 }
 
-.links {
+.copyright {
+    flex: 1;
+}
+
+.themeSection {
+    flex: 1;
     display: flex;
-    gap: var(--spacing-lg);
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .link {
@@ -30,5 +44,17 @@
     .content {
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+    
+    .copyright {
+        text-align: center;
+    }
+    
+    .themeSection {
+        order: -1;
+    }
+    
+    .links {
+        justify-content: center;
     }
 }
