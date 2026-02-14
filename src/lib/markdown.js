@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
@@ -10,7 +11,7 @@ const contentDirectory = path.join(process.cwd(), 'content');
 const isDev = process.env.NODE_ENV === 'development';
 
 // Create a single reusable remark processor instance for better performance
-const remarkProcessor = remark().use(html);
+const remarkProcessor = remark().use(remarkGfm).use(html);
 
 // Cache for processed markdown content to improve performance
 const contentCache = new Map();

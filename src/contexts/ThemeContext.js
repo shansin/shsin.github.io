@@ -4,8 +4,8 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  // Always start with 'dark' to match SSR - prevents hydration mismatch
-  const [theme, setTheme] = useState('dark');
+  // Always start with 'light' to match SSR - prevents hydration mismatch
+  const [theme, setTheme] = useState('light');
   const [mounted, setMounted] = useState(false);
 
   // Load saved theme preference after mount (client-side only)
@@ -13,8 +13,8 @@ export function ThemeProvider({ children }) {
     const stored = localStorage.getItem('theme');
     if (stored) {
       setTheme(stored);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
     }
     setMounted(true);
   }, []);
@@ -27,7 +27,7 @@ export function ThemeProvider({ children }) {
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
   return (

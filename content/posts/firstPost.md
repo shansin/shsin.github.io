@@ -1,6 +1,6 @@
 ---
 title: "First Post"
-date: "2026-01-19"
+date: "2025-11-24"
 tags: ["intro"]
 ---
 
